@@ -1,0 +1,35 @@
+﻿@model SendMessageModel
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Rabbit MQ sample</h1>    
+    
+</div>
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Index">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="HostName" class="control-label"></label>
+                <input asp-for="HostName" class="form-control" />
+                <span asp-validation-for="HostName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="QueueName" class="control-label"></label>
+                <input asp-for="QueueName" class="form-control" />
+                <span asp-validation-for="QueueName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MessageBody" class="control-label"></label>
+                <textarea asp-for="MessageBody" class="form-control"  ></textarea>
+                <span asp-validation-for="MessageBody" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Send" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
